@@ -37,16 +37,6 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     protected $email = '';
 
     /**
-     * @ORM\ManyToOne(targetEntity="Cliente\Entity\Cliente", inversedBy="usuarios")
-     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
-     * @ORM\OrderBy({"nome" = "ASC"})
-     * @Form\Options({"label":"Cliente", "target_class":"Cliente\Entity\Cliente","find_method":{"name":"findBy","params":{"criteria":{}, "orderBy":{"nome":"ASC"}}},"display_empty_item":true,"empty_item_label":"---"})
-     * @Form\Type("DoctrineModule\Form\Element\ObjectSelect")
-     * @Form\Required(false)
-     */
-    protected $cliente;
-
-    /**
      * @ORM\Column(type="string", length=32)
      * @Form\Type("Zend\Form\Element\Select")
      * @Form\Options({"label":"Permissão","value_options":{
@@ -205,17 +195,6 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setConfirmesenha($confirmesenha)
     {
         $this->confirmesenha = $confirmesenha;
-        return $this;
-    }
-
-    public function getCliente()
-    {
-        return $this->cliente;
-    }
-
-    public function setCliente($cliente)
-    {
-        $this->cliente = $cliente;
         return $this;
     }
 
