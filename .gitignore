@@ -1,0 +1,14 @@
+/.settings
+/.buildpath
+/.project
+/tests/TestConfiguration.php
+!*.gitadd
+!*.gitkeep
+.DS_Store
+Thumbs.db
+/vendor
+/composer.lock
+/config/autoload/*local*
+/data/cache/*
+/data/logs/*
+/data/DoctrineORMModule/Proxy/*

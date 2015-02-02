@@ -1,0 +1,54 @@
+<?php
+/**
+ * Tela de login
+ *
+ * @package        Usuario
+ * @author         Leandro Silva <leandro@olympussistemas.com.br>
+ * @copyright      2011-2012 Olympus Sistemas
+ * @version        SVN: $Id$
+ */
+
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+$form->setAttribute('id', 'loginForm');
+//$form->setAttribute('class', 'form-horizontal');
+$this->placeholder('mostraFooter')->set('não');
+//TODO: Usar remember me, provavelmente com cookies
+?>
+<div id="login-wrapper">
+<?php echo $this->form()->openTag($form) ?>
+
+            <?php if ($this->redirect): ?>
+                <input type="hidden" name="redirect" value="<?php echo $this->redirect ?>" />
+            <?php endif ?>
+
+            <div class="form-group<?php echo ($form->get('identity')->getMessages()) ? ' error' : ''?>">
+                <div class="controls">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <?php echo $this->formText($form->get('identity')->setAttributes(array('placeholder'=>'Login'))) ?>
+                    </div>
+                    <?php echo $this->losFormElementErrors($form->get('identity'), array('class' => 'help-block')) ?>
+                </div>
+            </div>
+
+            <div class="form-group<?php echo ($form->get('credential')->getMessages()) ? ' error' : ''?>">
+                <div class="controls">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                        <?php echo $this->formPassword($form->get('credential')->setAttributes(array('placeholder'=>'Senha'))) ?>
+                    </div>
+                    <?php echo $this->losFormElementErrors($form->get('credential'), array('class' => 'help-block')) ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-success" data-loading-text="Carregando..." style="width:100%">Acessar</button>
+                </div>
+            </div>
+
+<?php echo $this->form()->closeTag() ?>
+</div>

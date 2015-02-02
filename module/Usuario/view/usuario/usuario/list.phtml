@@ -1,0 +1,24 @@
+
+<table id="list" class="table table-hover table-striped">
+<thead>
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Cliente</th>
+        <th><a href="<?php echo $this->url('usuario/add')?>" class="btn btn-sm btn-success pull-right"><?= $this->losIcon('glyphicon-plus') ?></a></th>
+    </tr>
+</thead>
+<tbody>
+    <?php foreach ($this->paginator as $entity):?>
+        <tr class="linha">
+            <td><?php echo $entity->getNome()?></td>
+            <td><?php echo $entity->getEmail()?></td>
+            <td><?php echo $entity->getCliente() != null ? $entity->getCliente()->getNome() : ''?></td>
+            <td class="text-right">
+                <a href="<?php echo $this->url('usuario/edit',['id'=>$entity->getId()])?>" class="btn btn-xs btn-warning"><?= $this->losIcon('glyphicon-edit') ?></a>
+                <!-- <a href="<?php echo $this->url('usuario/add')?>" class="btn btn-xs btn-danger hide"><?= $this->losIcon('glyphicon-trash') ?></a>-->
+            </td>
+        </tr>
+    <?php endforeach;?>
+</tbody>
+</table>

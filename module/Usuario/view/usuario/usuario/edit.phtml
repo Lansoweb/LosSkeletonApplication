@@ -1,0 +1,16 @@
+<?php
+$form = $this->entityForm;
+//$form->prepare();
+?>
+
+<div class="row">
+    <div class="col-xs-12">
+        <?= $this->losForm($form) ?>
+    </div>
+</div>
+
+<?php $this->losHeadScript()->captureStart()?>
+$(document).ready(function(){
+    <?= $this->losChosen() ?>
+});
+<?php $this->losHeadScript()->captureEnd()?>

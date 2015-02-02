@@ -1,0 +1,108 @@
+body {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    background-color: #FFF;
+    font-family: "Lucida Grande", "QuicksandBook","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #636363;
+}
+
+/*
+.navbar-fixed-top {
+    background-color: #fff;
+    color: #8c9091;
+}
+
+.navbar-nav > li > a {
+    padding: 10px;
+    color: #636363;
+}
+
+.navbar-brand, .nav a {
+    color: #636363;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    color: #FFF;
+    background: none;
+}
+
+.navbar-fixed-bottom {
+    background-color: #fff;
+    color: #8c9091;
+    border-top: 1px solid #a5a5a5;
+    padding-top: 10px;
+}
+*/
+#login-wrapper {
+    width: 350px;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 0 #E2E2E2, 0 1px 1px #EDEEEF;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    text-align: left;
+    border: 1px solid #838383;
+    padding: 16px;
+}
+
+#login-wrapper input {
+    height: 30px;
+    width: 100%;
+}
+
+.panel, .panel-title {
+    color: #0077a1;
+}
+
+.panel {
+    min-height: 190px;
+    border-color: #cacaca;
+    border-radius: 8px;
+}
+
+.panel-default > .panel-heading {
+    border-color: #cacaca;
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+}
+
+.com-tabela {
+    background-color: #f8f5e4;
+    color: #6f6f6d;
+}
+
+.panel .table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: #dfe4e7;  
+}
+.panel .table-striped > tbody > tr:nth-child(2n) {
+    background-color: #ccdde7;
+}
+
+#list.table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: #dfe4e7;
+}
+
+#list.table-striped > tbody > tr:nth-child(2n) {
+    background-color: #ccdde7;
+}
+
+#list.table > thead > tr > th {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+#list.table > tbody > tr {
+    border-bottom: 6px solid #ebf0f3;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 8px 15px 8px 0;
+}
+
+.fieldset-query {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: 0.35em 0.625em;
+    margin-bottom: 15px;
+}
