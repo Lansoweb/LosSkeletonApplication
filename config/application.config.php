@@ -16,7 +16,6 @@ return array(
         'LosUi',
         'LosLog',
         'Application',
-        'Cliente',
         'Usuario'
     ),
     'module_listener_options' => array(

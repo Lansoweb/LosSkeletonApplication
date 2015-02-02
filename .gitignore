@@ -9,6 +9,7 @@ Thumbs.db
 /vendor
 /composer.lock
 /config/autoload/*local*
+/config/application.config.old
 /data/cache/*
 /data/logs/*
 /data/DoctrineORMModule/Proxy/*
