@@ -17,7 +17,6 @@
  * <http://www.doctrine-project.org>.
  */
 
-use Zend\ServiceManager\ServiceManager;
 use Zend\Mvc\Application;
 
 ini_set('display_errors', true);
@@ -51,8 +50,7 @@ function initAutoloader()
 {
     if (file_exists('vendor/autoload.php')) {
         $loader = include 'vendor/autoload.php';
-    }
-    elseif (file_exists('../Libs/autoload.php')) {
+    } elseif (file_exists('../Libs/autoload.php')) {
         $loader = include '../Libs/autoload.php';
     }
 
@@ -62,4 +60,3 @@ function initAutoloader()
 
     $loader->add ( 'CGSTests', __DIR__ );
 }
-

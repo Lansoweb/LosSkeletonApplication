@@ -3,10 +3,11 @@ namespace Usuario\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Form\Annotation as Form;
-use Doctrine\Common\Collections\ArrayCollection;
 use ZfcUser\Entity\UserInterface as ZfcUserInterface;
 use ZfcRbac\Identity\IdentityInterface;
 use LosBase\Entity\AbstractEntity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity
@@ -91,6 +92,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     {
         $this->created = new \DateTime('now');
         $this->updated = new \DateTime('now');
+        $this->acessos = new ArrayCollection();
     }
 
     /**
@@ -122,7 +124,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
 
     /**
      * Seta o campo $permissao
-     * @param field_type $permissao
+     * @param  field_type $permissao
      * @return $this
      */
     public function setPermissao($permissao)
@@ -157,6 +159,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -168,6 +171,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setUsername($username)
     {
         $this->username = $username;
+
         return $this;
     }
 
@@ -205,6 +209,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setConfirmesenha($confirmesenha)
     {
         $this->confirmesenha = $confirmesenha;
+
         return $this;
     }
 
@@ -216,6 +221,7 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setCliente($cliente)
     {
         $this->cliente = $cliente;
+
         return $this;
     }
 
@@ -227,6 +233,33 @@ class Usuario extends AbstractEntity implements ZfcUserInterface, IdentityInterf
     public function setAcessos($acessos)
     {
         $this->acessos = $acessos;
+
+        return $this;
+    }
+
+    public function addAcessos(Collection $acessos)
+    {
+        foreach ($acessos as $acesso) {
+            $acesso->setUsuario($this);
+            $this->acessos->add($acesso);
+        }
+    }
+
+    public function removeAcessos(Collection $acessos)
+    {
+        foreach ($acessos as $acesso) {
+            $this->acessos->removeElement($acesso);
+        }
+    }
+
+    public function addAcesso($acesso)
+    {
+        foreach ($this->acessos as $tok) {
+            if ($tok->getId() == $acesso->getId()) {
+                return $this;
+            }
+        }
+        $this->acessos[] = $acesso;
         return $this;
     }
 

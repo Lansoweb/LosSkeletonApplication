@@ -3,7 +3,6 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use LosBase\Entity\EntityManagerAwareTrait;
-use Doctrine\ORM\QueryBuilder;
 
 class IndexController extends AbstractActionController
 {

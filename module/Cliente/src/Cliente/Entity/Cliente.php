@@ -40,6 +40,7 @@ class Cliente extends AbstractEntity
     public function setNome($nome)
     {
         $this->nome = $nome;
+
         return $this;
     }
 
@@ -51,6 +52,7 @@ class Cliente extends AbstractEntity
     public function setCredito($credito)
     {
         $this->credito = $credito;
+
         return $this;
     }
 

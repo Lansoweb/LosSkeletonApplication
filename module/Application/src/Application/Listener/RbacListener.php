@@ -5,7 +5,8 @@ use Zend\EventManager\Event;
 
 class RbacListener
 {
-    public static function accept(Event $event) {
+    public static function accept(Event $event)
+    {
         $event->stopPropagation();
 
         $accepted = true;

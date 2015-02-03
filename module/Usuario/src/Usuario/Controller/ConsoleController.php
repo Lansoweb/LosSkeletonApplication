@@ -29,13 +29,13 @@ class ConsoleController extends AbstractActionController
     {
         $request = $this->getRequest();
 
-        if (!$request instanceof ConsoleRequest){
+        if (!$request instanceof ConsoleRequest) {
             throw new \RuntimeException('Esta ação só pode ser utilizada pelo console!');
         }
 
         try {
             $console = Console::getInstance();
-        } catch (ConsoleException $e){
+        } catch (ConsoleException $e) {
             throw new \RuntimeException('Esta ação só pode ser utilizada pelo console!');
         }
 
@@ -86,13 +86,13 @@ class ConsoleController extends AbstractActionController
     {
         $request = $this->getRequest();
 
-        if (!$request instanceof ConsoleRequest){
+        if (!$request instanceof ConsoleRequest) {
             throw new \RuntimeException('Esta ação só pode ser utilizada pelo console!');
         }
 
         try {
             $console = Console::getInstance();
-        } catch (ConsoleException $e){
+        } catch (ConsoleException $e) {
             throw new \RuntimeException('Esta ação só pode ser utilizada pelo console!');
         }
 

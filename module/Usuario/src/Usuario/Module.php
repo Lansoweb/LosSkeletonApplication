@@ -16,7 +16,7 @@ class Module extends AbstractModule
             ->getEventManager()
             ->getSharedManager();
 
-        $events->attach('ZfcUser\Authentication\Adapter\AdapterChain', 'authenticate.success', function ($e) use($sm, $em) {
+        $events->attach('ZfcUser\Authentication\Adapter\AdapterChain', 'authenticate.success', function ($e) use ($sm, $em) {
             $usuario_id = $e->getIdentity();
             $em = $sm->get('Doctrine\ORM\EntityManager');
             $usuario = $sm->get('Doctrine\ORM\EntityManager')->getRepository('Usuario\Entity\Usuario')->find($usuario_id);
@@ -32,8 +32,7 @@ class Module extends AbstractModule
             $em->flush();
         });
 
-        $events->attach('ZfcUser\Form\LoginFilter', 'init', function ($e) use($sm, $em)
-        {
+        $events->attach('ZfcUser\Form\LoginFilter', 'init', function ($e) use ($sm, $em) {
             $form = $e->getTarget();
             $form->remove('credential');
             $form->add(array(
@@ -53,7 +52,7 @@ class Module extends AbstractModule
             ));
         });
 
-        $events->attach('Usuario\Service\Usuario','save', function($e) use ($sm, $em) {
+        $events->attach('Usuario\Service\Usuario','save', function ($e) use ($sm, $em) {
 
             $usuario = $e->getParam('entity');
             $form = $e->getParam('form');
